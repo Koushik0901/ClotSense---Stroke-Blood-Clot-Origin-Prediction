@@ -1,0 +1,9 @@
+openslide-python==1.2.0
+tqdm==4.65.0
+pillow==9.4.0
+Flask==2.2.2
+Flask-MySQL
+cryptography
+pymysql==1.0.2
+torch==1.8.1 --extra-index-url https://download.pytorch.org/whl/lts/1.8/cpu
+torchvision==0.9.1 --extra-index-url https://download.pytorch.org/whl/lts/1.8/cpu

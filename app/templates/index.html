@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+		<title>ClotSense</title>
+		<meta content="" name="description" />
+		<meta content="" name="keywords" />
+		<!-- Google Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i"
+			rel="stylesheet"
+		/>
+
+		<!-- Favicons -->
+		<link
+			href="{{ url_for('static', filename='img/favicon.png') }}"
+			rel="icon"
+		/>
+
+		<!-- Vendor CSS Files -->
+		<link
+			href="{{ url_for('static', filename='vendor/aos/aos.css') }}"
+			rel="stylesheet"
+		/>
+		<link
+			href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}"
+			rel="stylesheet"
+		/>
+		<link
+			href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}"
+			rel="stylesheet"
+		/>
+		<link
+			href="{{ url_for('static', filename='vendor/boxicons/css/boxicons.min.css') }}"
+			rel="stylesheet"
+		/>
+		<link
+			href="{{ url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}"
+			rel="stylesheet"
+		/>
+		<link
+			href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}"
+			rel="stylesheet"
+		/>
+
+		<!-- Template Main CSS File -->
+		<link
+			href="{{ url_for('static', filename='css/style.css') }}"
+			rel="stylesheet"
+		/>
+	</head>
+
+	<body>
+		<!-- ======= Header ======= -->
+		<header id="header" class="fixed-top d-flex align-items-center">
+			<div
+				class="container d-flex align-items-center justify-content-between"
+				style="max-height: 71px"
+			>
+				<div class="logo">
+					<!-- <h1 class="text-light"><a href="index.html"><span>logo</span></a></h1> -->
+					<!-- Uncomment below if you prefer to use an image logo -->
+					<a href="index.html"
+						><img
+							src="{{ url_for('static', filename='img/logo.png') }}"
+							alt=""
+							class="img-fluid"
+					/></a>
+				</div>
+
+				<nav id="navbar" class="navbar">
+					<ul>
+						<li>
+							<a class="nav-link scrollto active" href="#home"
+								>Home</a
+							>
+						</li>
+						<li>
+							<a class="nav-link scrollto" href="#about"
+								>About Us</a
+							>
+						</li>
+						<li>
+							<a class="nav-link scrollto" href="#services"
+								>Services</a
+							>
+						</li>
+						<li>
+							<a class="nav-link scrollto" href="#team">Team</a>
+						</li>
+						<li>
+							<a class="nav-link scrollto" href="#contact"
+								>Contact</a
+							>
+						</li>
+						<li>
+							<a
+								class="getstarted scrollto"
+								href="{{ url_for('login') }}"
+								>Get Started</a
+							>
+						</li>
+					</ul>
+					<i class="bi bi-list mobile-nav-toggle"></i>
+				</nav>
+			</div>
+		</header>
+		<section id="hero" class="d-flex align-items-center">
+			<div class="container">
+				<div class="row gy-4">
+					<div
+						class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center"
+					>
+						<h1>
+							Discover the Origin of Clots and Save Lives with our
+							Revolutionary Blood Clot Classification System!
+						</h1>
+						<h2>We are team of final year students</h2>
+						<div>
+							<a href="#about" class="btn-get-started scrollto"
+								>Learn More</a
+							>
+						</div>
+					</div>
+					<div class="col-lg-6 order-1 order-lg-2 hero-img">
+						<img
+							src="{{ url_for('static', filename='img/hero-img.svg') }}"
+							class="img-fluid animated"
+							alt=""
+							width="500px"
+							height="300px"
+						/>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Hero -->
+
+		<main id="main">
+			<!-- ======= About Section ======= -->
+			<section id="about" class="about">
+				<div class="container">
+					<div class="row justify-content-between">
+						<div
+							class="col-lg-5 d-flex align-items-center justify-content-center about-img"
+						>
+							<img
+								src="{{ url_for('static', filename='img/about-img.svg') }}"
+								class="img-fluid"
+								alt=""
+								data-aos="zoom-in"
+							/>
+						</div>
+						<div class="col-lg-6 pt-5 pt-lg-0">
+							<h3 data-aos="fade-up">What is ClotSense?</h3>
+							<p data-aos="fade-up" data-aos-delay="100">
+								ClotSense is a state-of-the-art blood clot
+								classification system that utilizes advanced
+								deep learning algorithms to accurately and
+								efficiently classify blood clots based on their
+								characteristics. <br /><br />Using a large
+								dataset of annotated medical images, our product
+								is trainedto recognize patterns and features
+								thatdistinguish different types of blood
+								clots.<br /><br />
+								Overall, ClotSense has the potential to
+								significantly improve the speed and accuracy of
+								blood clot diagnosis and treatment. By
+								leveraging the power of deep learning and
+								computer vision, we are helping medical
+								professionals to provide better care for their
+								patients, ultimately saving lives and improving
+								health outcomes.
+							</p>
+							<!-- <div class="row">
+								<div
+									class="col-md-6"
+									data-aos="fade-up"
+									data-aos-delay="100"
+								>
+									<i class="bx bx-receipt"></i>
+									<h4>Better use of resources</h4>
+									<p>
+										By using a product that classifies
+										stroke blood clot origin, healthcare
+										providers can optimize the use of their
+										resources. For example, if a patient is
+										diagnosed with an embolic stroke,
+										doctors may choose to refer the patient
+										to a cardiologist to manage the
+										underlying heart condition that caused
+										the stroke. This can prevent unnecessary
+										testing and treatment, and ultimately
+										save time and money.
+									</p>
+								</div>
+								<div
+									class="col-md-6"
+									data-aos="fade-up"
+									data-aos-delay="200"
+								>
+									<i class="bx bx-cube-alt"></i>
+									<h4>Improved patient outcomes</h4>
+									<p>
+										By providing more accurate diagnoses and
+										personalized treatment plans, using a
+										product that classifies stroke blood
+										clot origin can improve patient
+										outcomes. This can lead to faster
+										recovery times, better quality of life,
+										and lower healthcare costs over time.
+									</p>
+								</div>
+							</div> -->
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End About Section -->
+
+			<!-- ======= Services Section ======= -->
+			<section id="services" class="services section-bg">
+				<div class="container" data-aos="fade-up">
+					<div class="section-title">
+						<h2>Advantages</h2>
+						<p>Why ClotSense?</p>
+					</div>
+
+					<div class="row">
+						<div
+							class="col-md-6 col-lg-3 d-flex align-items-stretch"
+							data-aos="zoom-in"
+							data-aos-delay="100"
+						>
+							<div class="icon-box">
+								<div class="icon">
+									<i class="bx bx-bullseye"></i>
+								</div>
+								<h4 class="title"><a href="">Accuracy</a></h4>
+								<p class="description">
+									ClotSense achieves high levels of accuracy
+									in detecting the origin of a blood clot by
+									learning patterns in large datasets of
+									medical images and patient data. It can
+									identify subtle differences that may be
+									missed by human doctors, resulting in more
+									accurate diagnoses
+								</p>
+							</div>
+						</div>
+
+						<div
+							class="col-md-6 col-lg-3 d-flex align-items-stretch"
+							data-aos="zoom-in"
+							data-aos-delay="200"
+						>
+							<div class="icon-box">
+								<div class="icon">
+									<i class="bx bx-rocket"></i>
+								</div>
+								<h4 class="title"><a href="">Speed</a></h4>
+								<p class="description">
+									ClotSense can quickly process vast amounts
+									of medical data, which is particularly
+									important in cases where time is of the
+									essence, such as in stroke diagnosis and
+									treatment.
+								</p>
+							</div>
+						</div>
+
+						<div
+							class="col-md-6 col-lg-3 d-flex align-items-stretch"
+							data-aos="zoom-in"
+							data-aos-delay="300"
+						>
+							<div class="icon-box">
+								<div class="icon">
+									<i class="bx bx-cog"></i>
+								</div>
+								<h4 class="title"><a href="">Automated</a></h4>
+								<p class="description">
+									ClotSense is trained to automatically
+									analyze whole-slide digital pathology
+									images, reducing the need for human
+									intervention and speeding up the diagnostic
+									process.
+								</p>
+							</div>
+						</div>
+
+						<div
+							class="col-md-6 col-lg-3 d-flex align-items-stretch"
+							data-aos="zoom-in"
+							data-aos-delay="400"
+						>
+							<div class="icon-box">
+								<div class="icon">
+									<i class="bx bx-dollar"></i>
+								</div>
+								<h4 class="title">
+									<a href="">Cost-effective</a>
+								</h4>
+								<p class="description">
+									ClotSense helps reduce the cost of medical
+									diagnosis and treatment by automating tasks
+									that would otherwise require human expertise
+									and time. This leads to more efficient use
+									of medical resources and improved patient
+									care.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End Services Section -->
+
+			<!-- ======= Team Section ======= -->
+			<section id="team" class="team">
+				<div class="container">
+					<div class="section-title" data-aos="fade-up">
+						<h2>Team</h2>
+						<p>Our team</p>
+					</div>
+					<div class="row justify-content-center">
+						<div
+							class="col-md-4"
+							data-aos="zoom-in"
+							data-aos-delay="100"
+						>
+							<div class="member">
+								<img
+									src="{{ url_for('static', filename='img/team/koushik.JPG') }}"
+									class="img-fluid"
+									alt=""
+									style="max-height: 410px"
+								/>
+								<div class="member-info">
+									<div class="member-info-content">
+										<h4>S. Koushik</h4>
+										<span>Computer science dept, PEC</span>
+									</div>
+									<div class="social">
+										<a href="https://github.com/Koushik0901"
+											><i class="bi bi-github"></i
+										></a>
+										<a
+											href="https://www.linkedin.com/in/koushik-sivarama-krishnan/"
+											><i class="bi bi-linkedin"></i
+										></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div
+							class="col-md-4"
+							data-aos="zoom-in"
+							data-aos-delay="200"
+						>
+							<div class="member">
+								<img
+									src="{{ url_for('static', filename='img/team/logesh.jpg') }}"
+									class="img-fluid"
+									alt=""
+									style="max-height: 410px"
+								/>
+								<div class="member-info">
+									<div class="member-info-content">
+										<h4>M. Logeshwaran</h4>
+										<span>Computer science dept, PEC</span>
+									</div>
+									<div class="social">
+										<a
+											href="https://github.com/logeshwaran57"
+											><i class="bi bi-github"></i
+										></a>
+										<a
+											href="https://www.linkedin.com/in/logeshwaran-m-43a722173/"
+											><i class="bi bi-linkedin"></i
+										></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div
+							class="col-md-4"
+							data-aos="zoom-in"
+							data-aos-delay="300"
+						>
+							<div class="member">
+								<img
+									src="{{ url_for('static', filename='img/team/joe.jpeg') }}"
+									class="img-fluid"
+									alt=""
+									style="max-height: 410px"
+								/>
+								<div class="member-info">
+									<div class="member-info-content">
+										<h4>P.J joe nikesh</h4>
+										<span>Computer science dept, PEC</span>
+									</div>
+									<div class="social">
+										<a href="https://github.com/joenikesh"
+											><i class="bi bi-github"></i
+										></a>
+										<a
+											href="https://www.linkedin.com/in/joe-nikesh-431780217/"
+											><i class="bi bi-linkedin"></i
+										></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End Team Section -->
+
+			<!-- ======= Contact Us Section ======= -->
+			<section id="contact" class="contact">
+				<div class="container" data-aos="fade-up">
+					<div class="section-title">
+						<!-- <h2>Contact Us</h2> -->
+						<p>Contact us</p>
+					</div>
+
+					<div class="row">
+						<div
+							class="col-lg-5 d-flex align-items-stretch"
+							data-aos="fade-up"
+							data-aos-delay="100"
+						>
+							<div class="info">
+								<div class="address">
+									<i class="bi bi-geo-alt"></i>
+									<h4>Location:</h4>
+									<p>
+										Panimalar Engineering college, chennai
+									</p>
+								</div>
+
+								<div class="email">
+									<i class="bi bi-envelope"></i>
+									<h4>Email:</h4>
+									<p>clotsense@gmail.com</p>
+								</div>
+
+								<div class="phone">
+									<i class="bi bi-phone"></i>
+									<h4>Call:</h4>
+									<p>+91 6383053749</p>
+								</div>
+
+								<iframe
+									src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.792044920742!2d80.0754642!3d13.0489049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5261c68a9f3031%3A0xab41c8bdcf32ad47!2sPanimalar%20Engineering%20College!5e0!3m2!1sen!2sin!4v1679315963260!5m2!1sen!2sin"
+									width="450"
+									height="450"
+									style="border: 0"
+									allowfullscreen=""
+									loading="lazy"
+									referrerpolicy="no-referrer-when-downgrade"
+								></iframe>
+							</div>
+						</div>
+
+						<div
+							class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch"
+							data-aos="fade-up"
+							data-aos-delay="200"
+						>
+							<form
+								action="forms/contact.php"
+								method="post"
+								role="form"
+								class="php-email-form"
+							>
+								<div class="row">
+									<div class="form-group col-md-6">
+										<label for="name">Your Name</label>
+										<input
+											type="text"
+											name="name"
+											class="form-control"
+											id="name"
+											placeholder="Your Name"
+											required
+										/>
+									</div>
+									<div
+										class="form-group col-md-6 mt-3 mt-md-0"
+									>
+										<label for="name">Your Email</label>
+										<input
+											type="email"
+											class="form-control"
+											name="email"
+											id="email"
+											placeholder="Your Email"
+											required
+										/>
+									</div>
+								</div>
+								<div class="form-group mt-3">
+									<label for="name">Subject</label>
+									<input
+										type="text"
+										class="form-control"
+										name="subject"
+										id="subject"
+										placeholder="Subject"
+										required
+									/>
+								</div>
+								<div class="form-group mt-3">
+									<label for="name">Message</label>
+									<textarea
+										class="form-control"
+										name="message"
+										rows="10"
+										required
+									></textarea>
+								</div>
+								<div class="my-3">
+									<div class="loading">Loading</div>
+									<div class="error-message"></div>
+									<div class="sent-message">
+										Your message has been sent. Thank you!
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="submit">Send Message</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End Contact Us Section -->
+		</main>
+		<!-- End #main -->
+
+		<script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/php-email-form/validate.js') }}"></script>
+
+		<!-- Template Main JS File -->
+		<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+	</body>
+</html>

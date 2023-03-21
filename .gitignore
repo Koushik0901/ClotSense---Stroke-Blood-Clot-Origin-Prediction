@@ -1,5 +1,5 @@
 *.pt
 *.ptl
-sample_data
+./sample_data
 docs
 *.tif
