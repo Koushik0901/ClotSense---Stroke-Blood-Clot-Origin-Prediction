@@ -11,11 +11,11 @@ app.config["SAVE_DIR"] = "data"
 engine = InferenceEngine()
 
 conn = pymysql.connect(
-    host="0.0.0.0",
+    host="db",
     user="root",
     password="root",
     database="clotDB",
-    port=8008,
+    port=3306,
 )
 
 cursor = conn.cursor()

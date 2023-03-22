@@ -17,6 +17,4 @@ services:
             MYSQL_ROOT_PASSWORD: root
         volumes:
             - ./db:/docker-entrypoint-initdb.d/:ro
-        expose:
-            - 3306
         restart: unless-stopped
