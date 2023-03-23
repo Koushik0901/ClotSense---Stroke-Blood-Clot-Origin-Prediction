@@ -3,3 +3,5 @@
 ./sample_data
 docs
 *.tif
+*.tar
+__pycache__

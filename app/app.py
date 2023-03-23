@@ -29,9 +29,6 @@ app.config["MYSQL_DATABASE_DB"] = "clotDB"
 app.config["MYSQL_DATABASE_HOST"] = "db"
 mysql.init_app(app)
 
-# conn = mysql.connect()
-
-# cursor = conn.cursor(pymysql.cursors.DictCursor)
 
 
 @app.route("/")
