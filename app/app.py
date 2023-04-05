@@ -4,7 +4,6 @@ import pymysql
 from engine import InferenceEngine
 from flask import Flask, jsonify, redirect, render_template, request, url_for
 from flaskext.mysql import MySQL
-from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 app.config["SAVE_DIR"] = "data"
@@ -43,10 +42,10 @@ def login():
         user = request.form["email"]
         password = request.form["password"]
         cursor.execute(
-            "SELECT password FROM users WHERE email = %s", (user)
+            "SELECT password FROM users WHERE email = %s AND password = %s", (user, password)
         )
         db_password = cursor.fetchone()
-        if len(db_password) != 0 and check_password_hash(db_password, password):
+        if len(db_password) != 0:
             return redirect(url_for("predict"))
         else:
             login_error = "Invalid email or password"
@@ -60,7 +59,6 @@ def register():
     if request.method == "POST":
         user = request.form["email"]
         password = request.form["password"]
-        hashed_password = generate_password_hash(password)
         cursor.execute("SELECT * FROM users WHERE email = %s", (user,))
         results = cursor.fetchall()
         if len(results) != 0:
@@ -68,11 +66,11 @@ def register():
             return render_template("index.html", register_error=register_error)
         else:
             cursor.execute(
-                f"INSERT INTO users (email, password) VALUES ('{user}', '{hashed_password}')"
+                f"INSERT INTO users (email, password) VALUES ('{user}', '{password}')"
             )
             conn.commit()
             print(cursor.rowcount, "record inserted.")
-            return redirect(url_for("predict"))
+            return redirect(url_for("login"))
     else:
         return render_template("register.html")
 
