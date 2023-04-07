@@ -1,5 +1,5 @@
 import os
-
+import wget
 import pymysql
 from engine import InferenceEngine
 from flask import Flask, jsonify, redirect, render_template, request, url_for
@@ -8,7 +8,24 @@ from flaskext.mysql import MySQL
 app = Flask(__name__)
 app.config["SAVE_DIR"] = "data"
 
-engine = InferenceEngine()
+os.makedirs("checkpoints", exist_ok=True)
+model_path = "./checkpoints/optimized_scripted_lite.ptl"
+bg_model_path = "./checkpoints/bg_classifier_optimized_scripted.pt"
+
+if not os.path.exists(model_path):
+    print("Downloading model...")
+    wget.download(
+        url="https://github.com/Koushik0901/Stroke-Blood-Clot-Origin-Prediction/releases/download/pretrained-models/optimized_scripted_lite.ptl",
+        out=model_path,
+    )
+if not os.path.exists(bg_model_path):
+    print("Downloading background model...")
+    wget.download(
+        url="https://github.com/Koushik0901/Stroke-Blood-Clot-Origin-Prediction/releases/download/pretrained-models/bg_classifier_optimized_scripted.pt",
+        out=bg_model_path,
+    )
+
+engine = InferenceEngine(model_path=model_path, bg_model_path=bg_model_path)
 
 conn = pymysql.connect(
     host="db",
@@ -30,7 +47,6 @@ app.config["MYSQL_DATABASE_HOST"] = "db"
 mysql.init_app(app)
 
 
-
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -42,7 +58,8 @@ def login():
         user = request.form["email"]
         password = request.form["password"]
         cursor.execute(
-            "SELECT password FROM users WHERE email = %s AND password = %s", (user, password)
+            "SELECT password FROM users WHERE email = %s AND password = %s",
+            (user, password),
         )
         db_password = cursor.fetchone()
         if len(db_password) != 0:
