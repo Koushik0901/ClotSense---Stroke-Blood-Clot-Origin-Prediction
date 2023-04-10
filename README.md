@@ -10,6 +10,7 @@ Classification of stroke blood clot origin is a crucial step in the diagnosis an
 </p>
 
 ## **Running on native machine**
+* clone the repository using `git clone https://github.com/Koushik0901/Stroke-Blood-Clot-Origin-Prediction.git`
 * install [docker](https://www.docker.com/)
 * execute `docker compose up` on your terminal
 * open `localhost:5000` on your browser to view the running application
