@@ -6,7 +6,7 @@ Classification of stroke blood clot origin is a crucial step in the diagnosis an
 
 ## **How it works?**
 
- <p align="center"> <img src="https://github.com/Koushik0901/Classification-of-Stroke-Blood-Clot-Origin/raw/main/app/static/img/how_it_works.gif" width="700" height="400"  />
+ <p align="center"> <img src="https://github.com/Koushik0901/Stroke-Blood-Clot-Origin-Prediction/blob/main/app/static/img/how_it_works.gif" width="700" height="400"  />
 </p>
 
 ## **Running on native machine**
